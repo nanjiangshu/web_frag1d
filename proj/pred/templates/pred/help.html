@@ -1,0 +1,197 @@
+{% extends "pred/base_layout.html" %}
+
+{%block content_right_panel %}
+    {% if username %}
+      {% include "pred/user_header.html" %}
+    {% endif %}
+  <h2>Help</h2>
+  <table cellspacing=0 cellpadding=0 border=0>
+    <tr>
+      <td class="Greylink"><a href="#1">1.&nbsp;Summary<img src="{{STATIC_URL}}/images/0.gif" height=1 width=5 border=0><img src="{{STATIC_URL}}/images/arrow.png" border=0><img src="{{STATIC_URL}}/images/0.gif" height=1 width=25 border=0></a><td>
+      <td class="Greylink"><a href="#2">2.&nbsp;Usage<img src="{{STATIC_URL}}/images/0.gif" height=1 width=5 border=0><img src="{{STATIC_URL}}/images/arrow.png" border=0><img src="{{STATIC_URL}}/images/0.gif" height=1 width=25 border=0></a><td>
+      <td class="Greylink"><a href="#3">3.&nbsp;Output<img src="{{STATIC_URL}}/images/0.gif" height=1 width=5 border=0><img src="{{STATIC_URL}}/images/arrow.png" border=0><img src="{{STATIC_URL}}/images/0.gif" height=1 width=25 border=0></a><td>
+      <td class="Greylink"><a href="#4">4.&nbsp;References<img src="{{STATIC_URL}}/images/0.gif" height=1 width=5 border=0><img src="{{STATIC_URL}}/images/arrow.png" border=0><img src="{{STATIC_URL}}/images/0.gif" height=1 width=25 border=0></a><td>
+      <td class="Greylink"><a href="#5">5.&nbsp;Contact<img src="{{STATIC_URL}}/images/0.gif" height=1 width=5 border=0><img src="{{STATIC_URL}}/images/arrow.png" border=0><img src="{{STATIC_URL}}/images/0.gif" height=1 width=25 border=0></a><td>
+      </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td valign="top" colspan="2">
+      <br><br>
+      <a name="1"></a>
+      <h3>1. Summary</h3><br>
+      <table cellspacing=0 cellpadding=0 border=0>
+        <tr>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=400></td>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=50></td>
+        </tr>
+        <tr> <td>
+            <p>
+                Frag1D is a web server for predicting one-dimensional (1D) 
+                structure of proteins from amino acid sequences.  It predicts 
+                three types of 1D structures, i.e. three-state secondary 
+                structure (H: Helix, S: Sheet, R: Random Coil), eight-state 
+                Shape Strings (R, S, U, V, A, K, G and T, see the definition in 
+                Figure 1) and three-state Shape Strings (R, S, U and V to S; A
+                and K to H; G and T to T). 
+            </p>
+            <div class="figure">
+                <p><img src="{{STATIC_URL}}/images/def_shapestring.jpg"
+                 alt="Definition of Shape Strings" align="center" border=0 height=300>
+                 </p>
+                 <p> <b>Figure 1</b>: Assignment of eight-state Shape Strings
+                as eight clustered regions with specific boundaries
+                on the <a
+                href="https://en.wikipedia.org/wiki/Ramachandran_plot">Ramachandran
+            plot</a>. </p>
+            </div>
+
+            <p>
+
+            <b>Background: </b>The precise prediction of one-dimensional (1D) protein structure
+            as represented by the protein secondary structure and 1D string of
+            discrete state of dihedral angles (i.e. Shape Strings) is a
+            prerequisite for the successful prediction of three-dimensional
+            (3D) structure as well as protein-protein interaction. We have
+            developed a novel 1D structure prediction method, called Frag1D,
+            based on a straightforward fragment matching algorithm and
+            demonstrated its success in the prediction of three sets of 1D
+            structural alphabets, i.e. the classical three-state secondary
+            structure, three- and eight-state Shape Strings.
+            By exploiting the vast protein sequence and protein
+            structure data available, we have brought secondary-structure
+            prediction closer to the expected theoretical limit. When tested
+            by a leave-one-out cross validation on a non-redundant set of PDB
+            cutting at 30% sequence identity containing 5860 protein chains,
+            the overall per-residue accuracy for secondary-structure
+            prediction, i.e. Q3 is 82.9%. The overall per-residue accuracy for
+            three- and eight-state Shape Strings are 85.1 and 71.5%,
+            respectively. We have also benchmarked our program with the latest
+            version of PSIPRED for secondary structure prediction and our
+            program predicted 0.3% better in Q3 when tested on 2241 chains
+            with the same training set. For Shape Strings, we compared our
+            method with a recently published method with the same dataset and
+            definition as used by that method. Our program predicted at 2.2%
+            better in accuracy for three-state Shape Strings. By
+            quantitatively investigating the effect of data base size on 1D
+            structure prediction we show that the accuracy increases by 1%
+            with every doubling of the database size. 
+
+            </p>
+
+          </td>
+        </tr>
+      </table>
+
+      <br><br>
+
+      <a name="3"></a>
+      <h3>3. Usage</h3><br>
+      <table cellspacing=0 cellpadding=0 border=0>
+        <tr>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=400></td>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=50></td>
+        </tr>
+        <tr><td>
+            <p>
+            Input to the server is one or several amino acid sequences (up to
+            {{MAX_ALLOWD_NUMSEQ}}) in <a
+              href='http://blast.ncbi.nlm.nih.gov/blastcgihelp.shtml'
+              target=\'_blank\'>FASTA</a> format. The user can either paste
+            one or more sequences in the text-area provided, or, alternatively,
+            upload a file in ASCII format.
+            </p>
+
+            <i>Example input:</i> <br>
+            <span style="font-family: courier">
+                &gt;2az4_A mol:protein length:429  hypothetical protein EF2904<br>
+                MESKAKTTVTFHSGILTIGGTVIEVAYKDAHIFFDFGTEFRPELDLPDDHIETLINNRLVPELKD<br>
+                LYDPRLGYEYHGAEDKDYQHTAVFLSHAHLDHSRMINYLDPAVPLYTLKETKMILNSLNRKGDFL<br>
+                IPSPFEEKNFTREMIGLNKNDVIKVGEISVEIVPVDHDAYGASALLIRTPDHFITYTGDLRLHGH<br>
+                NREETLAFCEKAKHTELLMMEGVSISFPEREPDPAQIAVVSEEDLVQHLVRLELENPNRQITFNG<br>
+                YPANVERFAKIIEKSPRTVVLEANMAALLLEVFGIEVRYYYAESGKIPELNPALEIPYDTLLKDK<br>
+                TDYLWQVVNQFDNLQEGSLYIHSDAQPLGDFDPQYRVFLDLLAKKDITFVRLACSGHAIPEDLDK<br>
+                IIALIEPQVLVPIHTLKPEKLENPYGERILPERGEQIVL<br>
+            </span>
+            <br>
+      </td></tr>
+    </table>
+
+    <br><br>
+
+      <a name="4"></a>
+
+      <h3>4. Output</h3><br>
+      <table cellspacing=0 cellpadding=0 border=0>
+        <tr>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=400></td>
+          <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=50></td>
+      </tr>
+      
+        <tr><td>
+                The result file has eight columns, they are 
+                Num, AA, Sec, ConfSec, S8, ConfS8,  S3 and ConfS3. <br> 
+                                                                    <br> 
+                <b>Explanation</b>:
+<pre>
+ Num        residue index in the sequence.
+ AA         one-letter amino acid code.
+ Sec        Predicted three state secondary structure,
+            (H, S and R).
+ ConfSec    Confidence of the predicted secondary structure.
+ S8         Predicted 8 state Shape String,
+            (R, S, U, V, A, K, G and T).
+ ConfS8     Confidence of the predicted 8 state Shape String.
+ S3         Predicted 3 state Shape String
+            (R, S, U, V -> S; A, K -> H; G, T -> T). 
+ ConfS3     Confidence of the predicted 3 state Shape String.
+</pre>
+      </td></tr>
+        <tr><td>
+                The output for the example sequence can be found <a href="{{BASEURL}}result/example_1seq">here</a>
+            <br><br>
+      </td></tr>
+    </table>
+    <br><br>
+
+    <a name="5"></a>
+
+    <h3>5. References</h3><br>
+    <table cellspacing=0 cellpadding=5 border=0>
+      <tr><td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=400></td>
+        <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=50></td>
+      </tr>
+         {% include "pred/refbib.html" %}
+  </table>
+
+  <br><br>
+  <a name="5"></a>
+
+    <h3>5. Contact</h3><br
+    <table cellspacing=0 cellpadding=0 border=0>
+      <tr>
+        <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=400></td>
+        <td><img src="{{STATIC_URL}}/images/0.gif" border=0 height=1 width=50></td>
+      </tr>
+      <tr><td>
+          <b>Nanjiang Shu</b><br><br>
+          <a href="http://www.dbb.su.se/">Department for Biochemistry and Biophysics</a><br>
+          The Arrhenius Laboratories for Natural Sciences<br>
+          <a href="http://www.su.se/">Stockholm University</a><br>
+          SE-106 91 Stockholm, Sweden<br><br>
+
+          <a href="http://www.scilifelab.se">Science for Life Laboratory</a><br>
+            Box 1031, 17121 Solna, Sweden
+            <br><br>
+          <table cellspacing=0 cellpadding=0 border=0>
+            <tr><td>E-mail:</td><td>&nbsp;&nbsp;&nbsp;</td><td><a href="mailto:nanjiang.shu@scilifelab.se">nanjiang.shu@scilifelab.se</a></td></tr>
+          </table>
+          <br><br><br>
+    </td></tr>
+  </table>
+
+  </table>
+
+{% endblock %}
+

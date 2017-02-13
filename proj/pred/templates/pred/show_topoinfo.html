@@ -1,0 +1,40 @@
+{%if nicehtmlfile %}
+<h4>Sequence and predicted secondary structure and <a href="{{BASEURL}}help/#1">shape strings</a></h4>
+<b>Description of the result:</b><br>
+<table class="descriptiontable">
+    <tr>
+        <td>Num</td>
+        <td>Residue index in the sequence</td>
+    </tr>
+    <tr>
+        <td> AA</td>
+        <td> One-letter amino acid code</td>
+    </tr>
+    <tr>
+        <td> Sec    </td>
+        <td> Predicted three state secondary structure, (H, S and R).</td>
+    </tr>
+    <tr>
+        <td> ConfSec  </td>
+        <td>Confidence of the predicted secondary structure.</td>
+    </tr>
+    <tr>
+        <td> S8 </td>
+        <td> Predicted 8 state Shape String, (R, S, U, V, A, K, G and T). </td>
+    </tr>
+    <tr>
+        <td> ConfS8   </td>
+        <td>Confidence of the predicted 8 state Shape String. </td> 
+    </tr>
+    <tr>
+         <td>S3 </td>
+         <td>Predicted 3 state Shape String (R, S, U and V to S; A and K to H; G and T to T). </td> 
+    </tr>
+    <tr>
+        <td> ConfS3 </td>
+        <td>  Confidence of the predicted 3 state Shape String. </td> 
+    </tr>
+</table>
+    <br>
+{% include nicehtmlfile %}
+{%endif%}
