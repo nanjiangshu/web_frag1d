@@ -11,6 +11,9 @@
 {% block html_head_meta %}{% endblock %}
 
 <link rel="stylesheet" href="{{STATIC_URL}}css/template_css.css" type="text/css" />
+<link rel="stylesheet" href="{{STATIC_URL}}css/jquery.dataTables.css" type="text/css" />
+<script type="text/javascript" charset="utf8" src="{{STATIC_URL}}js/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="{{STATIC_URL}}js/jquery.dataTables.min.js"></script>
 <script language="javascript">
 if (document.images) {
   arrow = new Image(); arrow.src = "{{STATIC_URL}}images/arrow.png";
@@ -39,6 +42,9 @@ function hideShow(element){
 function example_fill(){
   document.seq_form.rawseq.value='>1b9m_A  mol:protein  length:265  chainID:A REGULATOR FROM ESCHERICHIA COLI\nGSHMQAEILLTLKLQQKLFADPRRISLLKHIALSGSISQGAKDAGISYKSAWDAINEMNQLSEHILVERATGGKGGGGAVLTRYGQRLIQLYDLLAQIQQKAFDVLSDDDALPLNSLLAAISRFSLQTSARNQWFGTITARDHDDVQQHVDVLLADGKTRLKVAITAQSGARLGLDEGKEVLILLKAPWVGITQDEAVAQNADNQLPGIISHIERGAEQCEVLMALPDGQTLCATVPVNEATSLQQGQNVTAYFNADSVIIATLC';
 }
+$(function(){
+        $("#jobtable").dataTable();
+        })
 
 {% block javascript_function %}{% endblock %}
 
