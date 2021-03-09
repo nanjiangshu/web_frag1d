@@ -538,7 +538,7 @@ def get_news(request):# {{{
     return render(request, 'pred/news.html', info)
 # }}}
 def help_wsdl_api(request):# {{{
-    g_params['api_script_rtname'] =  "subcons_wsdl"
+    g_params['api_script_rtname'] =  "frag1d_wsdl"
     info = webcom.help_wsdl_api(request, g_params)
     return render(request, 'pred/help_wsdl_api.html', info)
 # }}}
@@ -575,7 +575,7 @@ def get_results(request, jobid="1"):#{{{
 
     rstdir = "%s/%s"%(path_result, jobid)
     outpathname = jobid
-    resultfile = "%s/%s/%s/%s"%(rstdir, jobid, outpathname, "query.predzinc.txt")
+    resultfile = "%s/%s/%s/%s"%(rstdir, jobid, outpathname, "query.frag1d.txt")
     tarball = "%s/%s.tar.gz"%(rstdir, outpathname)
     zipfile = "%s/%s.zip"%(rstdir, outpathname)
     starttagfile = "%s/%s"%(rstdir, "runjob.start")
@@ -740,7 +740,8 @@ def get_results(request, jobid="1"):#{{{
     cntcached = 0
 # get seqid_index_map
     if os.path.exists(finished_seq_file):
-        resultdict['index_table_header'] = ["No.", "Length", "numZB", "RunTime(s)", "SequenceName", "Source", "FinishDate" ]
+        resultdict['index_table_header'] = ["No.", "Length", "%H (sec)", 
+                "%S (sec)", "%H (S3)", "%S (S3)", "RunTime(s)", "SequenceName", "Source" , "FinishDate"]
         index_table_content_list = []
         indexmap_content = myfunc.ReadFile(finished_seq_file).split("\n")
         processed_seq_set = set([])
@@ -752,24 +753,48 @@ def get_results(request, jobid="1"):#{{{
                 if not subfolder in processed_seq_set:
                     processed_seq_set.add(subfolder)
                     length_str = strs[1]
-                    numZB_str = strs[2]
-                    source = strs[4]
+                    per_sec_H_str =   strs[2]
+                    per_sec_S_str = strs[3]
+                    per_s3_H_str = strs[5]
+                    per_s3_S_str = strs[6]
+
                     try:
-                        finishdate = strs[7]
-                    except IndexError:
-                        finishdate = "N/A"
+                        per_sec_H_str = str("%.1f"%(float(per_sec_H_str)))
+                    except:
+                        per_sec_H_str = ""
+
                     try:
-                        runtime_in_sec_str = "%.1f"%(float(strs[5]))
+                        per_sec_S_str = str("%.1f"%(float(per_sec_S_str)))
+                    except:
+                        per_sec_S_str = ""
+
+                    try:
+                        per_s3_H_str = str("%.1f"%(float(per_s3_H_str)))
+                    except:
+                        per_s3_H_str = ""
+
+                    try:
+                        per_s3_S_str = str("%.1f"%(float(per_s3_S_str)))
+                    except:
+                        per_s3_S_str = ""
+                    source = strs[8]
+                    try:
+                        runtime_in_sec_str = "%.1f"%(float(strs[9]))
                         if source == "newrun":
-                            sum_run_time += float(strs[5])
+                            sum_run_time += float(strs[9])
                             cntnewrun += 1
                         elif source == "cached":
                             cntcached += 1
                     except:
                         runtime_in_sec_str = ""
-                    desp = strs[6]
+                    desp = strs[10]
+                    try:
+                        finishdate = strs[11]
+                    except IndexError:
+                        finishdate = "N/A"
                     rank = "%d"%(cnt+1)
-                    index_table_content_list.append([rank, length_str, numZB_str,
+                    index_table_content_list.append([rank, length_str, 
+                        per_sec_H_str, per_sec_S_str, per_s3_H_str, per_s3_S_str,
                         runtime_in_sec_str, desp[:30], subfolder, source, finishdate])
                     cnt += 1
         if cntnewrun > 0:
@@ -833,7 +858,7 @@ def get_results(request, jobid="1"):#{{{
     subdirname = "seq_0"
     topfolder_seq0 = "%s/%s/%s"%(rstdir, jobid, subdirname)
     resultdict['subdirname'] = subdirname
-    nicetopfile = "%s/query.predzinc.report.html"%(topfolder_seq0)
+    nicetopfile = "%s/query.predfrag1d.html"%(topfolder_seq0)
     if os.path.exists(nicetopfile):
         resultdict['nicetopfile'] = "%s/%s/%s/%s/%s"%(
                 "result", jobid, jobid, subdirname,
@@ -848,8 +873,8 @@ def get_results(request, jobid="1"):#{{{
 #}}}
 
 def get_results_eachseq(request, jobid="1", seqindex="1"):# {{{
-    name_resultfile = "query.predzinc.report"
-    name_nicetopfile = "query.predzinc.report.html"
+    name_resultfile = "query.predfrag1d"
+    name_nicetopfile = "query.predfrag1d.html"
     resultdict = webcom.get_results_eachseq(request, name_resultfile, name_nicetopfile, jobid, seqindex, g_params)
     return render(request, 'pred/get_results_eachseq.html', resultdict)
 # }}}
@@ -1079,7 +1104,7 @@ class ExceptionHandlingService_submitseq(DjangoServiceBase):
 
 
 app_submitseq = Application([Service_submitseq, ContainerService_submitseq,
-    ExceptionHandlingService_submitseq], 'subcons.bioinfo.se',
+    ExceptionHandlingService_submitseq], 'frag1d.bioshu.se',
     in_protocol=Soap11(validator='soft'), out_protocol=Soap11())
 #wsgi_app_submitseq = WsgiApplication(app_submitseq)
 
