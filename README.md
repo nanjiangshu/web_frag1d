@@ -1,21 +1,21 @@
-#Web-server for Frag1D
+# Web-server for Frag1D
 
-##Description:
+## Description:
     This is the web-server implementation of Frag1D
 
     Frag1D is a method for predicting protein backbone diherial angles in 8 or
     3 states, given amino acid sequences of proteins.
 
-    The web-server is developed with Django (>=1.6.4)
+    The web-server is developed with Django (>=2.0) and Python 3
 
-    This software is open source and licensed under the GPL v3 license (a copy
+    This software is open source and licensed under the MIT license (a copy
     of the license is included in the repository)
 
 
 ##Author
 Nanjiang Shu
 
-Short-term bioinformatics support at NBIS
+National Bioinformatics Infrastructure Sweden
 
 Email: nanjiang.shu@scilifelab.se
 
