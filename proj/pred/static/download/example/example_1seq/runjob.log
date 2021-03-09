@@ -1,0 +1,2 @@
+tmpdir = /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t
+/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/rst_5wWwE_/query_0.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/rst_5wWwE_/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta

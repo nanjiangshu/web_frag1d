@@ -16,3 +16,12 @@ log/
 md5/
 env/
 bak.env/
+
+mytest/
+.mytest/
+
+proj/pred/config/*.txt
+proj/settings.py
+env*bak/
+*.py.bak
+env-bak-py2/

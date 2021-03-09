@@ -23,12 +23,12 @@ $rundir/proj/pred/static/log/divided
 "
 
 echo "setting up file permissions"
-platform_info=`python -mplatform |  tr '[:upper:]' '[:lower:]'`
+platform_info=`python3 -mplatform |  tr '[:upper:]' '[:lower:]'`
 platform=
 case $platform_info in 
     *centos*)platform=centos;;
     *redhat*) platform=redhat;;
-    *ubuntu*)platform=ubuntu;;
+    *ubuntu*|*debian*)platform=ubuntu;;
     *)platform=other;;
 esac
 

@@ -1,0 +1,1 @@
+seq_0	265	1b9m_A  mol:protein  length:265  chainID:A REGULATOR FROM ESCHERICHIA COLI
