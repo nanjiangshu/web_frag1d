@@ -82,7 +82,7 @@ def RunJob(infile, outpath, tmpdir, email, jobid, g_params):#{{{
     zipfile = "%s.zip"%(resultpathname)
     tarball_fullpath = "%s.tar.gz"%(outpath_result)
     zipfile_fullpath = "%s.zip"%(outpath_result)
-    resultfile_text = "%s/%s"%(outpath_result, "query.predzinc.txt")
+    resultfile_text = "%s/%s"%(outpath_result, "query.frag1d.txt")
     mapfile = "%s/seqid_index_map.txt"%(outpath_result)
     finished_seq_file = "%s/finished_seqs.txt"%(outpath_result)
     finished_idx_file = "%s/finished_seqindex.txt"%(outpath)
@@ -151,11 +151,11 @@ def RunJob(infile, outpath, tmpdir, email, jobid, g_params):#{{{
                             webcom.RunCmd(cmd, runjob_logfile, runjob_errfile)
                             shutil.move("%s/%s"%(outpath_result, md5_key), outpath_this_seq)
 
-                        checkfile = "%s/query.predzinc.report"%(outpath_this_seq)
+                        checkfile = "%s/query.predfrag1d"%(outpath_this_seq)
                         fafile_this_seq =  '%s/seq.fa'%(outpath_this_seq)
 
                         if os.path.exists(outpath_this_seq) and os.path.exists(checkfile):
-                            info_finish = webcom.GetInfoFinish_PredZinc(outpath_this_seq,
+                            info_finish = webcom.GetInfoFinish_Frag1D(outpath_this_seq,
                                     cnt, len(rd.seq), rd.description,
                                     source_result="cached", runtime=0.0)
                             myfunc.WriteFile("\t".join(info_finish)+"\n", finished_seq_file, "a", isFlush=True)
@@ -185,7 +185,7 @@ def RunJob(infile, outpath, tmpdir, email, jobid, g_params):#{{{
     if len(toRunDict) == 0:
         # now write the text output to a single file
         statfile = "%s/%s"%(outpath_result, "stat.txt")
-        name_server = "predzinc"
+        name_server = "frag1d"
         webcom.WriteDumpedTextResultFile(name_server, resultfile_text, outpath_result, maplist,
                 all_runtime_in_sec, g_params['base_www_url'], statfile=statfile)
 
@@ -215,7 +215,7 @@ def RunJob(infile, outpath, tmpdir, email, jobid, g_params):#{{{
             else:
                 finish_status = "failed"
             webcom.SendEmail_on_finish(jobid, g_params['base_www_url'],
-                    finish_status, name_server="PredZinc", from_email="no-reply.predzinc@bioshu.se)",
+                    finish_status, name_server="Frag1D", from_email="no-reply.frag1d@bioshu.se)",
                     to_email=email, contact_email=contact_email,
                     logfile=runjob_logfile, errfile=runjob_errfile)
 

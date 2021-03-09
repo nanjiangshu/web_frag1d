@@ -231,7 +231,7 @@ def InitGlobalParameter():#{{{
     g_params['TZ'] = "Europe/Stockholm"
     g_params['MAX_CACHE_PROCESS'] = 200 # process at the maximum this cached sequences in one loop
     g_params['STATUS_UPDATE_FREQUENCY'] = [500, 50]  # updated by if loop%$1 == $2
-    g_params['name_server'] = "predzinc"
+    g_params['name_server'] = "frag1d"
     g_params['path_static'] = path_static
     g_params['path_result'] = path_result
     g_params['path_log'] = path_log
