@@ -1,0 +1,2 @@
+localhost
+dev.frag1d.bioshu.se
