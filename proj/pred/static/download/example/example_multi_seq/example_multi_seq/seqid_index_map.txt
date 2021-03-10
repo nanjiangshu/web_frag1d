@@ -1,5 +1,0 @@
-seq_0	458	UniRef100_A0AG12 GdhA protein n=1 Tax=Listeria welshimeri serovar 6b (strain ATCC 35897 / DSM 20650 / SLCC5334) RepID=A0AG12_LISW6
-seq_1	351	UniRef100_A0AF84 Complete genome n=1 Tax=Listeria welshimeri serovar 6b (strain ATCC 35897 / DSM 20650 / SLCC5334) RepID=A0AF84_LISW6
-seq_2	1080	UniRef100_A0AEN4 Complete genome n=1 Tax=Listeria welshimeri serovar 6b (strain ATCC 35897 / DSM 20650 / SLCC5334) RepID=A0AEN4_LISW6
-seq_3	366	UniRef100_A0AGX5 Complete genome n=1 Tax=Listeria welshimeri serovar 6b (strain ATCC 35897 / DSM 20650 / SLCC5334) RepID=A0AGX5_LISW6
-seq_4	559	UniRef100_A0AF68 Complete genome n=1 Tax=Listeria welshimeri serovar 6b (strain ATCC 35897 / DSM 20650 / SLCC5334) RepID=A0AF68_LISW6

@@ -1,6 +1,6 @@
-tmpdir = /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/query_0.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/query_1.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/query_2.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/query_3.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/query_4.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_dVQntb/rst_H9E5sU/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
+tmpdir = /big/server/var/www/web_frag1d/proj/pred/static/tmp/tmp_5kjj9852
+[2021-03-10 09:21:37 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_t6pbztxd/cache_processed.finish succeeded
+[2021-03-10 09:21:37 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_t6pbztxd/runjob.qdinit succeeded
+[2021-03-10 09:21:39 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_t6pbztxd/runjob.start succeeded
+[2021-03-10 10:04:14 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_t6pbztxd/runjob.finish succeeded
+[2021-03-10 10:04:14 CET] Sendmail None -> nanjiang.shu@gmail.com, Your result for frag1d JOBID=rst_t6pbztxd
