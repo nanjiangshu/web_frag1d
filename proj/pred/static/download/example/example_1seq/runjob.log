@@ -1,2 +1,6 @@
-tmpdir = /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t
-/big/server/var/www/web_frag1d/release/proj/pred/app/soft/frag1d/frag1d.sh /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/rst_5wWwE_/query_0.fa -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/rst_5wWwE_/seq_0 -cpu 4 -db nr30 -blastdb /data/blastdb/uniref90.fasta
+tmpdir = /big/server/var/www/web_frag1d/proj/pred/static/tmp/tmp_asl9h99_
+[2021-03-10 09:12:08 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_lmf1ywyn/runjob.start succeeded
+[2021-03-10 09:12:08 CET] rmtree(/big/server/var/www/web_frag1d/proj/pred/static/tmp/tmp_asl9h99_)
+[2021-03-10 09:12:10 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_lmf1ywyn/runjob.qdinit succeeded
+[2021-03-10 09:34:07 CET] Write tag file /big/server/var/www/web_frag1d/proj/pred/static/result/rst_lmf1ywyn/runjob.finish succeeded
+[2021-03-10 09:34:07 CET] Sendmail None -> nanjiang.shu@gmail.com, Your result for frag1d JOBID=rst_lmf1ywyn

@@ -1,13 +1,13 @@
 Go to SubmitJobToQueue()
 Entering SubmitJobToQueue()
-Write scriptfile /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/runjobSPLITrst_5wWwE_SPLIT130.229.42.88SPLITnanjiang.shu@scilifelab.seSPLIT1.sh
+Write scriptfile /big/server/var/www/web_frag1d/proj/pred/static/result/rst_lmf1ywyn/runjob;frag1d;rst_lmf1ywyn;130.237.250.4;nanjiang.shu@gmail.com;1.sh
 Getting priority
-priority=999999999
-Entering SubmitSuqJob()
-cmdline: /usr/bin/suq -b /scratch run -d /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t -p 999999999 /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t/runjobSPLITrst_5wWwE_SPLIT130.229.42.88SPLITnanjiang.shu@scilifelab.seSPLIT1.sh
+priority=266448333
+[2021-03-10 09:12:08 CET] Entering SubmitSlurmJob()
+[2021-03-10 09:12:08 CET] cmdline: sbatch /big/server/var/www/web_frag1d/proj/pred/static/result/rst_lmf1ywyn/runjob;frag1d;rst_lmf1ywyn;130.237.250.4;nanjiang.shu@gmail.com;1.sh
 
-run cmd: cnttry = 0, MAX_TRY=5
-Leaving SubmitSuqJob() with success
 
-cmdline: /big/server/var/www/web_frag1d/release/env/bin/python2.7 /big/server/var/www/web_frag1d/release/proj/pred/app/submit_job_to_queue.py -nseq 1 -nseq-this-user 1 -jobid rst_5wWwE_ -outpath /big/server/var/www/web_frag1d/release/proj/pred/static/result/rst_5wWwE_ -datapath /big/server/var/www/web_frag1d/release/proj/pred/static/tmp/tmp_8baV7t -baseurl http://frag1d.bioshu.se -email nanjiang.shu@scilifelab.se -host 130.229.42.88 -force
+[2021-03-10 09:12:08 CET] run cmd: cnttry = 0, MAX_TRY=2
+
+[2021-03-10 09:12:08 CET] Leaving SubmitSlurmJob() with success
 
