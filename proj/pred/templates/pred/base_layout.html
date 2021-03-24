@@ -11,14 +11,14 @@
 
 {% block html_head_meta %}{% endblock %}
 
-<link rel="stylesheet" href="{{STATIC_URL}}css/template_css.css" type="text/css" />
-<link rel="stylesheet" href="{{STATIC_URL}}css/jquery.dataTables.css" type="text/css" />
-<script type="text/javascript" charset="utf8" src="{{STATIC_URL}}js/jquery.js"></script>
-<script type="text/javascript" charset="utf8" src="{{STATIC_URL}}js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="{% static "css/template_css.css" %}" type="text/css" />
+<link rel="stylesheet" href="{% static "css/jquery.dataTables.css" %}" type="text/css" />
+<script type="text/javascript" charset="utf8" src="{% static "js/jquery.js" %}"></script>
+<script type="text/javascript" charset="utf8" src="{% static "js/jquery.dataTables.min.js" %}"></script>
 <script language="javascript">
 if (document.images) {
-  arrow = new Image(); arrow.src = "{{STATIC_URL}}images/arrow.png";
-  arrow90 = new Image(); arrow90.src = "{{STATIC_URL}}images/arrow90.png";
+  arrow = new Image(); arrow.src = "{% static "images/arrow.png" %}";
+  arrow90 = new Image(); arrow90.src = "{% static "images/arrow90.png" %}";
 }
 
 function print_todays_date( ) {
@@ -68,7 +68,7 @@ $(function(){
 
 
   <tr>
-    <td width="100%" height="147" colspan="100%" align="right" valign="top" background="{{STATIC_URL}}images/header_frag1d_w950.png">
+    <td width="100%" height="147" colspan="100%" align="right" valign="top" background="{% static "images/header_frag1d_w950.png" %}">
     </td>
 
   </tr>
@@ -79,7 +79,7 @@ $(function(){
 <table width="950" height="76%" border="0" align="center" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
   <tr>
     <!-- LEFT panel begins -->
-    <td width="20%" valign="top" style="background-repeat: repeat-y; background-position: top left;" background="{{STATIC_URL}}images/cbr_graymeny160_shadow.png">
+    <td width="20%" valign="top" style="background-repeat: repeat-y; background-position: top left;" background="{% static "images/cbr_graymeny160_shadow.png" %}">
       <table cellpadding="0" cellspacing="0" class="moduletable">
         <!--<tr> <th valign="top">Main Menu</th> </tr>-->
 
@@ -147,7 +147,7 @@ $(function(){
     <!-- LEFT panel Ends -->
 
     <!-- Right panel with input forms-->
-    <td width="100%" valign="top" style="background-repeat: repeat-y; background-position: top right;" background="{{STATIC_URL}}images/cbr_right_shadow.png">
+    <td width="100%" valign="top" style="background-repeat: repeat-y; background-position: top right;" background="{% static "images/cbr_right_shadow.png" %}">
       <table class="blog" cellpadding="0" cellspacing="0">
         <tr>
           <td valign="top">
@@ -182,12 +182,12 @@ $(function(){
 <!-- BOTTOM panel begins -->
 <table width="950" height="5%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td width="23"><img src="{{STATIC_URL}}images/cbr_lower_left_gray.png" alt="" width="23" height="75" border="0" /></td>
+    <td width="23"><img src="{% static "images/cbr_lower_left_gray.png" %}" alt="" width="23" height="75" border="0" /></td>
 
-    <td height="5%" align="center" bgcolor="#FFFFFF" style="background-repeat: repeat-y; background-position: top left;" background="{{STATIC_URL}}images/cbr_graymenu_bg137.png">
+    <td height="5%" align="center" bgcolor="#FFFFFF" style="background-repeat: repeat-y; background-position: top left;" background="{% static "images/cbr_graymenu_bg137.png" %}">
     </td>
 
-    <td width="23"><img src="{{STATIC_URL}}images/cbr_lower_right.png" alt="" width="23" height="75" border="0" /></td>
+    <td width="23"><img src="{% static "images/cbr_lower_right.png" %}" alt="" width="23" height="75" border="0" /></td>
   </tr>
 </table>
 <!-- BOTTOM panel ends -->
