@@ -23,7 +23,7 @@ $rundir/proj/pred/static/log/divided
 "
 
 echo "setting up file permissions"
-platform_info=`python3 -mplatform |  tr '[:upper:]' '[:lower:]'`
+platform_info=$(python3 -c 'import distro; print(str(distro.linux_distribution()).lower())')
 platform=
 case $platform_info in 
     *centos*)platform=centos;;
@@ -56,7 +56,7 @@ for dir in  $dirlist; do
         exec_cmd "sudo mkdir -p $dir"
     fi
     exec_cmd "sudo chmod 755 $dir"
-    exec_cmd "sudo chown -R $user:$group $dir"
+    exec_cmd "sudo chown $user:$group $dir"
 done
 
 logfile_submit=$rundir/proj/pred/static/log/submitted_seq.log
