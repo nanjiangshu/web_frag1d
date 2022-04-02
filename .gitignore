@@ -22,6 +22,7 @@ mytest/
 
 proj/pred/config/*.txt
 proj/settings.py
+proj/allowed*.txt
 env*bak/
 *.py.bak
 env-bak-py2/
